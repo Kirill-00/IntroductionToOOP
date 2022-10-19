@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 
 #define tab "\t"
@@ -28,7 +28,7 @@ public:
 	Point()
 	{
 		x = y = double();
-		//double() - значение по умолчанию для типа double
+		//double() - Р·РЅР°С‡РµРЅРёРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РґР»СЏ С‚РёРїР° double
 		cout << "Constructors:\t" << this << endl;
 	}
 	Point(double x)
@@ -63,10 +63,10 @@ void main()
 	//cout << "Hello OOP" << endl;
 
 #ifdef STRUCT_POINT
-	int a;  //объявление переменной 'a' типа 'int'
-	Point A;//объявление переменной 'A' типа 'Point'
-			//объявление объекта 'A' структуры 'Point'
-			//объявление экземпляра 'A' структуры 'Point'
+	int a;  //РѕР±СЉСЏРІР»РµРЅРёРµ РїРµСЂРµРјРµРЅРЅРѕР№ 'a' С‚РёРїР° 'int'
+	Point A;//РѕР±СЉСЏРІР»РµРЅРёРµ РїРµСЂРµРјРµРЅРЅРѕР№ 'A' С‚РёРїР° 'Point'
+			//РѕР±СЉСЏРІР»РµРЅРёРµ РѕР±СЉРµРєС‚Р° 'A' СЃС‚СЂСѓРєС‚СѓСЂС‹ 'Point'
+			//РѕР±СЉСЏРІР»РµРЅРёРµ СЌРєР·РµРјРїР»СЏСЂР° 'A' СЃС‚СЂСѓРєС‚СѓСЂС‹ 'Point'
 	A.x = 2.2;
 	A.y = 3.3;
 	cout << A.x << tab << A.y << endl;
