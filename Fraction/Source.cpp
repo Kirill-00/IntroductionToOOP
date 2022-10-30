@@ -1,9 +1,9 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 
 #define delimiter "\n------------------------------------------------\n"
 
-class Fraction; //Объявление класса
+class Fraction; //РћР±СЉСЏРІР»РµРЅРёРµ РєР»Р°СЃСЃР°
 Fraction operator*(Fraction left, Fraction right);
 
 class Fraction
@@ -55,7 +55,7 @@ public:
 	}
 	Fraction(double decimal)
 	{
-		integer = decimal; //Сохраняем целую часть
+		integer = decimal; //РЎРѕС…СЂР°РЅСЏРµРј С†РµР»СѓСЋ С‡Р°СЃС‚СЊ
 		decimal += 1e-10;
 		denominator = 1e+9;
 		numerator = (decimal - integer) * denominator;
@@ -149,7 +149,7 @@ public:
 	}
 	Fraction& reduce()
 	{
-		int more, less, rest;//rest - остаток
+		int more, less, rest;//rest - РѕСЃС‚Р°С‚РѕРє
 		if (numerator > denominator)more = numerator, less = denominator;
 		else less = numerator, more = denominator;
 		do
@@ -158,7 +158,7 @@ public:
 			more = less;
 			less = rest;
 		} while (rest);
-		int GCD = more;//GCD - Greatrst Common Dividor(наибольший ощий делмтель)
+		int GCD = more;//GCD - Greatrst Common Dividor(РЅР°РёР±РѕР»СЊС€РёР№ РѕС‰РёР№ РґРµР»РјС‚РµР»СЊ)
 		numerator /= GCD;
 		denominator /= GCD;
 		return* this;
@@ -318,9 +318,9 @@ void main()
 Fraction B(5, 10);
 if (A == B)
 {
-	cout << "Дроби равны" << endl;
+	cout << "Р”СЂРѕР±Рё СЂР°РІРЅС‹" << endl;
 }
-else cout << "Дроби разные" << endl;*/
+else cout << "Р”СЂРѕР±Рё СЂР°Р·РЅС‹Рµ" << endl;*/
 	cout << (Fraction(1, 2) <= Fraction(5, 10)) << endl;
 #endif // COMPARISON_OPERATORS_CHECK
 #ifdef TYPE_CONVERSIONS_BASICS
