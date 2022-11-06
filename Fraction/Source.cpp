@@ -1,4 +1,5 @@
-﻿#include<iostream>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
 using namespace std;
 
 #define delimiter "\n------------------------------------------------\n"
@@ -178,6 +179,37 @@ ostream& operator<<(ostream& os, const Fraction& obj)
 	return os;
 }
 
+istream& operator>>(istream& is, Fraction& obj)
+{
+	const int SIZE = 256;
+	char buffer[SIZE]{};
+	//is >> buffer;
+	is.getline(buffer, SIZE);
+	char delimiters[] = "()/ ";
+	int number[3] = {}; //здесь будут храниться числа, извлеченные из строки
+
+	int n = 0;
+	/*for (char* pch = strtok(buffer, delimiters); pch; pch = strtok(NULL, delimiters))
+	{
+		//pch - указатель который хранит адрес токена.
+		//токен - часть строки, находящаяся между двумя разделителями
+		number[n++] = atoi(pch);
+		//atoi(char* str); //ASCII string to integer
+	}*/
+	char* pch = strtok(buffer, delimiters);
+	do
+	{
+		number[n++] = atoi(pch);//to_int_number
+		//atoi - ASCII string to Integer
+		if (n >= 3)break;
+	} while (pch = strtok(0, delimiters));
+
+	for (int i = 0; i < n; i++)cout << number[i] << "\t";
+	cout << endl;
+
+	return is;
+}
+
 Fraction operator*(Fraction left, Fraction right)
 {
 	left.to_improper();
@@ -265,7 +297,7 @@ bool operator<=(const Fraction& left, const Fraction& right)
 //#define COMPARISON_OPERATORS_CHECK
 //#define TYPE_CONVERSIONS_BASICS
 //#define CONVERSION_FROM_OTHER_TO_CLASS
-#define CONVERSION_FROM_CLASS_TO_OTHER_TYPES
+//#define CONVERSION_FROM_CLASS_TO_OTHER_TYPES
 
 void main()
 {
@@ -352,4 +384,7 @@ else cout << "Дроби разные" << endl;*/
 	cout << B << endl;
 #endif // CONVERSION_FROM_CLASS_TO_OTHER_TYPES
 
+	Fraction A;
+	cout << "Введите простую дробь: "; cin >> A;
+	cout << A << endl;
 }

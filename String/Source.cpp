@@ -10,8 +10,16 @@ public:
 	{
 		return str;
 	}
+	char* get_str()
+	{
+		return str;
+	}
+	int get_size()const
+	{
+		return size;
+	}
 	//              Constructors
-	String(size_t size=80)
+	explicit String(size_t size=80)
 	{
 		this->size = size;
 		this->str = new char[size] {};
@@ -55,6 +63,16 @@ public:
 	}
 };
 
+String operator+(const String& left, const String& right)
+{
+	String cat(left.get_size() + right.get_size() - 1);
+	for (int i = 0; i < left.get_size(); i++)
+		cat.get_str()[i] = left.get_str()[i];
+	for (int i = 0; i < right.get_size(); i++)
+		cat.get_str()[i + left.get_size() - 1] = right.get_str()[i];
+	return cat;
+}
+
 ostream& operator<<(ostream& os, const String& obj)
 {
 	return os << obj.get_str();
@@ -77,18 +95,18 @@ void main()
 	String str3 = "Hello";
 	str3.print();
 
-	String str4 = str3;
+	String str4 = str3;  //CopyConstructor
 	cout << str4 << endl;
 
-	String str5;
-	str5 = str4;
+	String str5;  //DefaultConstructor
+	str5 = str4;  //Copy assignment
 	cout << str5 << endl;
 #endif // CONSTRUCTORS_CHECK
 
 #ifdef OPERATOR_PLUS_CHECK
 	String str1 = "Hello";
 	String str2 = "World";
-	String str3 = str1 + str2;
+	String str3 = str1 + " " + str2;
 	cout << str3 << endl;
 #endif // OPERATOR_PLUS_CHECK
 }

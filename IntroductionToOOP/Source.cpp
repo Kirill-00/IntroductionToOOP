@@ -138,8 +138,8 @@ ostream& operator<<(ostream& os, const Point& obj)
 }
 
 //#define STRUCT_POINT
-//#define GET_SET_CHECK
-#define DISTANCE_CHECK
+#define GET_SET_CHECK
+//#define DISTANCE_CHECK
 //#define CONSTRUCTORS_CHECK
 //#define ASSIGMENT_OPERATOR_CHECK
 //#define ARITHMETIAL_OPERATORS_CHECK
