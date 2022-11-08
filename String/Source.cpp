@@ -22,31 +22,32 @@ public:
 		return size;
 	}
 	//              Constructors
-	explicit String(size_t size=80)
+	explicit String(size_t size = 80) :size(size), str(new char[size] {})
 	{
-		this->size = size;
-		this->str = new char[size] {};
+		//this->size = size;
+		//this->str = new char[size] {};
 		cout << "DefConstructor:\t" << this << endl;
 	}
-	String(const char str[])
+	String(const char str[]) :size(strlen(str) + 1), str(new char[size] {})
 	{
-		this->size = strlen(str) + 1;
-		this->str = new char[size] {};
-		for (int i = 0; i < size; i++)this->str[i] = str[i];
+		//this->size = strlen(str) + 1;
+		//this->str = new char[size] {};
+		for (int i = 0; i < size; i++)
+			this->str[i] = str[i];
 		cout << "Constructor:\t" << endl;
 	}
-	String(const String& other)
+	String(const String& other):size(other.size), str(new char[size]{})
 	{
-		this->size = other.size;
-		this->str = new char[size] {};
+		//this->size = other.size;
+		//this->str = new char[size] {};
 		for (int i = 0; i < size; i++)this->str[i] = other.str[i];
 		cout << "CopyConstructor:" << this << endl;
 	}
-	String(String&& other)
+	String(String&& other) :size(other.size), str(other.str)
 	{
 		//Shallow copy:
-		this->size = other.size;
-		this->str = other.str;
+		//this->size = other.size;
+		//this->str = other.str;
 		other.size = 0;
 		other.str = nullptr;
 		cout << "MoveConstructor:" << this << endl;
@@ -143,11 +144,12 @@ void main()
 #ifdef OPERATOR_PLUS_CHECK
 	String str1 = "Hello";
 	String str2 = "World";
-	/*String str3;
-	str3 = str1 + str2;
-	cout << str3 << endl;*/
+	String str3 = str1 + str2;
+	cout << str3 << endl;
 	str1 += str2;
 	cout << str1 << endl;
+	String str4 = str1;
+	cout << str4 << endl;
 #endif // OPERATOR_PLUS_CHECK
 
 #ifdef WAYS_TO_CALL_CONSTRUCTORS
