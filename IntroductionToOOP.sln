@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fraction", "Fraction\Fracti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String", "String\String.vcxproj", "{253A8EE9-EA48-4203-A1E8-D7E949C7157A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringLibTest", "StringLibTest\StringLibTest.vcxproj", "{0A37BBD1-8F2C-48C8-BF22-110AA3318D49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{253A8EE9-EA48-4203-A1E8-D7E949C7157A}.Release|x64.Build.0 = Release|x64
 		{253A8EE9-EA48-4203-A1E8-D7E949C7157A}.Release|x86.ActiveCfg = Release|Win32
 		{253A8EE9-EA48-4203-A1E8-D7E949C7157A}.Release|x86.Build.0 = Release|Win32
+		{0A37BBD1-8F2C-48C8-BF22-110AA3318D49}.Debug|x64.ActiveCfg = Debug|x64
+		{0A37BBD1-8F2C-48C8-BF22-110AA3318D49}.Debug|x64.Build.0 = Debug|x64
+		{0A37BBD1-8F2C-48C8-BF22-110AA3318D49}.Debug|x86.ActiveCfg = Debug|Win32
+		{0A37BBD1-8F2C-48C8-BF22-110AA3318D49}.Debug|x86.Build.0 = Debug|Win32
+		{0A37BBD1-8F2C-48C8-BF22-110AA3318D49}.Release|x64.ActiveCfg = Release|x64
+		{0A37BBD1-8F2C-48C8-BF22-110AA3318D49}.Release|x64.Build.0 = Release|x64
+		{0A37BBD1-8F2C-48C8-BF22-110AA3318D49}.Release|x86.ActiveCfg = Release|Win32
+		{0A37BBD1-8F2C-48C8-BF22-110AA3318D49}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
